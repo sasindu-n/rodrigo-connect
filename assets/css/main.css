@@ -97,7 +97,6 @@ body {
 .quick-actions-section,
 .social-section,
 .showroom-details-card,
-.account-details-card,
 .showroom-footer {
   min-width: 0;
 }
@@ -175,7 +174,7 @@ a:focus-visible, button:focus-visible {
       "topbar topbar"
       "hero actions"
       "social social"
-      "details account"
+      "details details"
       "footer footer";
     align-content: start;
     gap: 20px;
@@ -203,9 +202,6 @@ a:focus-visible, button:focus-visible {
     grid-area: details;
   }
 
-  .account-details-card {
-    grid-area: account;
-  }
 
   .showroom-footer {
     grid-area: footer;

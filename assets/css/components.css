@@ -501,8 +501,7 @@
 /* ============================================================
    5. SHOWROOM DETAILS CARD
    ============================================================ */
-.showroom-details-card,
-.account-details-card {
+.showroom-details-card {
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012)),
     rgba(13, 16, 24, 0.82);
@@ -653,171 +652,9 @@
   margin: 0;
 }
 
-/* ============================================================
-   6. ACCOUNT DETAILS
-   ============================================================ */
-.account-details-card {
-  gap: 10px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
-.account-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  min-width: 0;
-}
-
-.account-card-header::after {
-  content: '';
-  flex: 1;
-  min-width: 18px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--hero-red), rgba(255, 255, 255, 0.2), transparent);
-  box-shadow: 0 0 14px rgba(227, 24, 30, 0.5);
-  order: 2;
-}
-
-.account-card-header > div:first-child {
-  min-width: 0;
-  flex-shrink: 0;
-  order: 1;
-}
-
-.account-title {
-  margin-bottom: 1px;
-  padding-left: 0;
-}
-
-.account-title::after {
-  display: none;
-}
-
-.account-subtitle {
-  font-size: 0.7rem;
-  color: var(--text-dim);
-  line-height: 1.25;
-}
-
-.bank-logo-slot {
-  --bank-logo-width: clamp(245px, 32vw, 340px);
-  width: var(--bank-logo-width);
-  min-width: var(--bank-logo-width);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 10px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.65);
-  order: 3;
-}
-
-.bank-logo {
-  display: block;
-  width: var(--bank-logo-width);
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.account-rows {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 6px;
-}
-
-.account-row {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  min-width: 0;
-  padding: 8px 9px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.075);
-}
-
-.account-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  min-width: 0;
-  flex: 1;
-}
-
-.account-number-row {
-  background:
-    linear-gradient(140deg, rgba(227, 24, 30, 0.115), rgba(255, 255, 255, 0.028)),
-    rgba(255, 255, 255, 0.04);
-  border-color: rgba(227, 24, 30, 0.22);
-}
-
-.account-number {
-  color: #FFFFFF;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  letter-spacing: 0.035em;
-}
-
-.copy-all-btn {
-  width: 100%;
-  min-height: 40px;
-  border: 1px solid rgba(227, 24, 30, 0.35);
-  border-radius: 14px;
-  background:
-    linear-gradient(135deg, rgba(227, 24, 30, 0.9), rgba(179, 16, 21, 0.92)),
-    var(--hero-red);
-  color: #FFFFFF;
-  font-size: 0.8rem;
-  font-weight: 800;
-  box-shadow: 0 10px 22px rgba(227, 24, 30, 0.15);
-}
-
-.copy-all-btn:hover,
-.copy-all-btn:focus-visible {
-  background:
-    linear-gradient(135deg, rgba(255, 43, 50, 0.96), rgba(179, 16, 21, 0.94)),
-    var(--hero-red-hover);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.copy-all-btn.copied {
-  background:
-    linear-gradient(135deg, rgba(37, 211, 102, 0.92), rgba(11, 132, 65, 0.95)),
-    var(--whatsapp-green);
-  border-color: rgba(37, 211, 102, 0.38);
-}
-
-.copy-toast {
-  position: fixed;
-  left: 50%;
-  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-  transform: translate(-50%, 12px);
-  z-index: 20;
-  opacity: 0;
-  pointer-events: none;
-  background: rgba(10, 12, 18, 0.92);
-  border: 1px solid rgba(37, 211, 102, 0.28);
-  border-radius: var(--radius-pill);
-  color: #FFFFFF;
-  padding: 9px 16px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.36);
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-}
-
-.copy-toast.visible {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
 
 /* ============================================================
-   7. FOOTER
+   6. FOOTER
    ============================================================ */
 .showroom-footer {
   text-align: center;
@@ -886,21 +723,6 @@
 
   .showroom-details-card {
     gap: 14px;
-  }
-
-  .account-card-header {
-    gap: 8px;
-  }
-
-  .account-card-header::after {
-    min-width: 8px;
-  }
-
-  .bank-logo-slot {
-    --bank-logo-width: clamp(150px, 42vw, 188px);
-    width: var(--bank-logo-width);
-    min-width: var(--bank-logo-width);
-    padding: 5px 8px;
   }
 }
 
@@ -1132,15 +954,6 @@
   .account-details-card {
     padding: 20px 18px 18px;
   }
-
-  .account-details-card {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .account-rows {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1167,10 +980,6 @@
 
   .social-handle {
     white-space: nowrap;
-  }
-
-  .account-rows {
-    grid-template-columns: minmax(0, 1fr);
   }
 }
 
