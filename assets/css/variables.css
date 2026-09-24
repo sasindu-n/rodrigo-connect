@@ -1,0 +1,66 @@
+/**
+ * Rodrigo Enterprises - Design Tokens & Variables
+ * Premium Automotive Theme with Hero MotoCorp Red Accents
+ */
+:root {
+  /* Core Brand Colors */
+  --hero-red: #E3181E;
+  --hero-red-hover: #FF2B32;
+  --hero-red-deep: #B31015;
+  --hero-red-glow: rgba(227, 24, 30, 0.28);
+  --hero-red-subtle: rgba(227, 24, 30, 0.12);
+
+  /* Channel Accent Colors */
+  --whatsapp-green: #25D366;
+  --whatsapp-glow: rgba(37, 211, 102, 0.25);
+  --whatsapp-subtle: rgba(37, 211, 102, 0.12);
+
+  --google-gold: #FFB800;
+  --google-gold-glow: rgba(255, 184, 0, 0.25);
+  --google-gold-subtle: rgba(255, 184, 0, 0.12);
+
+  --maps-blue: #3880FF;
+  --maps-glow: rgba(56, 128, 255, 0.25);
+  --maps-subtle: rgba(56, 128, 255, 0.12);
+
+  /* Dark Automotive Slate & Obsidian Palette */
+  --bg-canvas: #07080B;
+  --bg-surface: #0E1017;
+  --bg-card: rgba(16, 19, 28, 0.72);
+  --bg-card-hover: rgba(24, 28, 40, 0.85);
+  --bg-glass-pill: rgba(255, 255, 255, 0.05);
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-active: rgba(227, 24, 30, 0.45);
+
+  /* Typography Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD2E1;
+  --text-muted: #8E96A8;
+  --text-dim: #5D6475;
+
+  /* Typography Stack */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sinhala: 'Noto Sans Sinhala', 'Plus Jakarta Sans', sans-serif;
+  --font-tamil: 'Noto Sans Tamil', 'Plus Jakarta Sans', sans-serif;
+
+  /* Radii */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --radius-pill: 9999px;
+
+  /* Depth & Shadows */
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0 14px 40px rgba(0, 0, 0, 0.5);
+  --shadow-elevated: 0 20px 50px rgba(0, 0, 0, 0.65);
+  --shadow-hero-glow: 0 8px 32px var(--hero-red-glow);
+
+  /* Transitions */
+  --transition-fast: 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-smooth: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,220 @@
+/**
+ * Rodrigo Enterprises - Base Layout & Responsive Showroom Viewport
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sinhala and Tamil Font Overrides */
+html[lang="si"],
+html[lang="si"] body {
+  font-family: var(--font-sinhala);
+}
+
+html[lang="ta"],
+html[lang="ta"] body {
+  font-family: var(--font-tamil);
+}
+
+html[lang="si"] .business-title,
+html[lang="si"] .tile-title,
+html[lang="si"] .section-title,
+html[lang="si"] .business-badge-sub,
+html[lang="si"] .detail-value,
+html[lang="ta"] .business-title,
+html[lang="ta"] .tile-title,
+html[lang="ta"] .section-title,
+html[lang="ta"] .business-badge-sub,
+html[lang="ta"] .detail-value {
+  line-height: 1.52;
+  letter-spacing: 0.01em;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-canvas);
+  background-image: 
+    radial-gradient(ellipse 90% 42% at 50% -8%, rgba(227, 24, 30, 0.23) 0%, rgba(227, 24, 30, 0.08) 34%, transparent 66%),
+    radial-gradient(ellipse 70% 46% at 100% 28%, rgba(84, 9, 14, 0.22) 0%, transparent 56%),
+    radial-gradient(ellipse 64% 36% at 0% 100%, rgba(43, 47, 62, 0.24) 0%, transparent 72%),
+    linear-gradient(180deg, #050609 0%, #0B0D13 48%, #06070A 100%);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-primary);
+}
+
+/* Ambient Automotive Radial Glow Mesh */
+.ambient-glow-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1080px;
+  height: 520px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(227, 24, 30, 0.24) 0%, rgba(227, 24, 30, 0.05) 48%, transparent 73%),
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.035) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive Showroom Container */
+.showroom-container {
+  width: 100%;
+  max-width: 1160px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  z-index: 1;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) clamp(14px, 4vw, 40px) calc(30px + env(safe-area-inset-bottom, 0px));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.showroom-topbar,
+.showroom-hero-card,
+.quick-actions-section,
+.social-section,
+.showroom-details-card,
+.account-details-card,
+.showroom-footer {
+  min-width: 0;
+}
+
+/* Section Header Typography */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  padding-left: 4px;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-subtle) 0%, transparent 100%);
+}
+
+/* Interactive Touch Feel */
+a, button {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+a:active, button:active {
+  transform: scale(0.972);
+}
+
+/* Focus Visible for Accessibility */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--hero-red);
+  outline-offset: 3px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  .showroom-container {
+    max-width: 760px;
+    gap: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .showroom-container {
+    max-width: 1120px;
+    grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+    grid-template-areas:
+      "topbar topbar"
+      "hero actions"
+      "social social"
+      "details account"
+      "footer footer";
+    align-content: start;
+    gap: 20px;
+  }
+
+  .showroom-topbar {
+    grid-area: topbar;
+  }
+
+  .showroom-hero-card {
+    grid-area: hero;
+    height: auto;
+    align-self: start;
+  }
+
+  .quick-actions-section {
+    grid-area: actions;
+  }
+
+  .social-section {
+    grid-area: social;
+  }
+
+  .showroom-details-card {
+    grid-area: details;
+  }
+
+  .account-details-card {
+    grid-area: account;
+  }
+
+  .showroom-footer {
+    grid-area: footer;
+  }
+}
+
+@media (min-width: 1280px) {
+  .showroom-container {
+    max-width: 1180px;
+    grid-template-columns: minmax(340px, 410px) minmax(0, 1fr);
+  }
+}

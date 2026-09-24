@@ -1,0 +1,1183 @@
+/**
+ * Rodrigo Enterprises - Showroom UI Components
+ */
+
+/* ============================================================
+   1. TOP NAVIGATION & LANGUAGE SWITCHER
+   ============================================================ */
+.showroom-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 2px 1px 0;
+  min-width: 0;
+}
+
+.dealer-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.024)),
+    rgba(12, 15, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  padding: 4px 9px 4px 5px;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 780;
+  color: var(--text-secondary);
+  letter-spacing: 0.016em;
+  min-width: 0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.dealer-hero-logo-slot {
+  width: 43px;
+  height: 21px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 5px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.dealer-hero-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 16px;
+  object-fit: contain;
+}
+/* Language Switcher Pill */
+.lang-switcher-wrap {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  padding: 2px;
+  border-radius: var(--radius-pill);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.lang-pill-indicator {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc((100% - 4px) / 3);
+  height: calc(100% - 4px);
+  background: var(--hero-red);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 10px var(--hero-red-glow);
+  transition: transform var(--transition-smooth);
+  pointer-events: none;
+}
+
+.lang-pill-indicator.pos-si {
+  transform: translateX(100%);
+}
+
+.lang-pill-indicator.pos-ta {
+  transform: translateX(200%);
+}
+
+.lang-btn {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  min-width: 38px;
+  padding: 5px 7px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.lang-btn.active {
+  color: #FFFFFF;
+}
+
+/* ============================================================
+   2. SHOWROOM HERO IDENTITY CARD
+   ============================================================ */
+.showroom-hero-card {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(7, 9, 14, 0.46) 0%, rgba(7, 9, 14, 0.72) 56%, rgba(8, 10, 15, 0.9) 100%),
+    radial-gradient(circle at 50% -12%, rgba(227, 24, 30, 0.18) 0%, rgba(227, 24, 30, 0.06) 45%, transparent 72%),
+    url('../images/Showroom image.jpg') center 39% / cover no-repeat,
+    linear-gradient(180deg, rgba(18, 21, 31, 0.94) 0%, rgba(12, 14, 21, 0.92) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 26px;
+  min-height: clamp(148px, 42vw, 172px);
+  max-height: 178px;
+  padding: 12px 15px 11px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34), 0 0 24px rgba(227, 24, 30, 0.08);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.showroom-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), rgba(227, 24, 30, 0.72), rgba(255, 255, 255, 0.14), transparent);
+}
+
+.showroom-hero-card::after {
+  content: '';
+  position: absolute;
+  inset: auto 20px 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(227, 24, 30, 0.24), transparent);
+  opacity: 0.58;
+}
+
+/* Rodrigo Enterprises Logo Header */
+.brand-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 7px;
+  min-height: 40px;
+  flex-wrap: wrap;
+}
+
+.logo-slot {
+  width: clamp(50px, 14vw, 64px);
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.brand-logo {
+  max-height: none;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-fast);
+  filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.28)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.42));
+}
+
+
+
+.hero-identity-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.business-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.28rem, 5.65vw, 1.58rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  line-height: 1.22;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.business-badge-sub {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 620;
+  color: rgba(255, 106, 111, 0.92);
+  letter-spacing: 0.018em;
+  line-height: 1.3;
+  max-width: 260px;
+}
+
+.location-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  margin-top: 1px;
+  line-height: 1.35;
+}
+
+.location-sub svg {
+  width: 14px;
+  height: 14px;
+  color: var(--hero-red);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   3. PRIMARY 2x2 ACTION COCKPIT
+   ============================================================ */
+.vip-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.action-tile {
+  position: relative;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.012)),
+    var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.115);
+  border-radius: 20px;
+  padding: 14px 13px 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 108px;
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.action-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.action-tile:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.action-tile:hover::before {
+  opacity: 1;
+}
+
+/* Specific Tile Styling */
+/* WhatsApp Tile */
+.tile-whatsapp {
+  border-color: rgba(37, 211, 102, 0.25);
+  background: linear-gradient(145deg, rgba(37, 211, 102, 0.08) 0%, rgba(16, 19, 28, 0.8) 100%);
+}
+.tile-whatsapp::before {
+  box-shadow: inset 0 0 20px var(--whatsapp-subtle);
+}
+.tile-whatsapp .tile-icon-wrap {
+  color: var(--whatsapp-green);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.tile-whatsapp .whatsapp-mark {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* Call Now Tile */
+.tile-call {
+  border-color: rgba(227, 24, 30, 0.25);
+  background: linear-gradient(145deg, rgba(227, 24, 30, 0.08) 0%, rgba(16, 19, 28, 0.8) 100%);
+}
+.tile-call::before {
+  box-shadow: inset 0 0 20px var(--hero-red-subtle);
+}
+.tile-call .tile-icon-wrap {
+  color: var(--hero-red);
+  background: var(--hero-red-subtle);
+  border: 1px solid rgba(227, 24, 30, 0.3);
+}
+
+/* Directions Tile */
+.tile-directions {
+  border-color: rgba(56, 128, 255, 0.22);
+  background: linear-gradient(145deg, rgba(56, 128, 255, 0.07) 0%, rgba(16, 19, 28, 0.8) 100%);
+}
+.tile-directions .tile-icon-wrap {
+  color: var(--maps-blue);
+  background: var(--maps-subtle);
+  border: 1px solid rgba(56, 128, 255, 0.28);
+}
+
+/* Review Tile */
+.tile-review {
+  border-color: rgba(255, 184, 0, 0.22);
+  background: linear-gradient(145deg, rgba(255, 184, 0, 0.07) 0%, rgba(16, 19, 28, 0.8) 100%);
+}
+.tile-review .tile-icon-wrap {
+  color: var(--google-gold);
+  background: var(--google-gold-subtle);
+  border: 1px solid rgba(255, 184, 0, 0.28);
+}
+
+/* Tile Internal Layout */
+.tile-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.tile-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tile-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.channel-logo {
+  display: block;
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+
+.tile-arrow {
+  color: var(--text-dim);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.action-tile:hover .tile-arrow {
+  color: var(--text-primary);
+  transform: translate(2px, -2px);
+}
+
+.tile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tile-title {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.tile-sub {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* Star rating mini badge */
+.mini-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--google-gold);
+  margin-top: 1px;
+}
+
+.mini-stars svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ============================================================
+   4. CONNECT & FOLLOW HUB (SOCIAL CHANNELS)
+   ============================================================ */
+.social-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.01)),
+    var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.105);
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.social-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.social-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.social-card:hover .social-icon-box {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+.social-icon-box .channel-logo {
+  width: 24px;
+  height: 24px;
+}
+
+.social-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.social-name {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.social-handle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+
+/* ============================================================
+   5. SHOWROOM DETAILS CARD
+   ============================================================ */
+.showroom-details-card,
+.account-details-card {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012)),
+    rgba(13, 16, 24, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 24px;
+  padding: 20px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  position: relative;
+}
+
+.detail-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--hero-red);
+  margin-top: 2px;
+}
+
+.detail-icon-wrap svg {
+  width: 19px;
+  height: 19px;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.copy-btn {
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.copy-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.copy-icon-default,
+.copy-icon-done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.copy-icon-done {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(8px) scale(0.86);
+  color: var(--whatsapp-green);
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.copy-btn.copied {
+  background: rgba(37, 211, 102, 0.13);
+  border-color: rgba(37, 211, 102, 0.3);
+  color: var(--whatsapp-green);
+}
+
+.copy-btn.copied .copy-icon-default {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.86);
+}
+
+.copy-btn.copied .copy-icon-done {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.detail-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+.detail-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.detail-value a {
+  color: var(--text-primary);
+  transition: color var(--transition-fast);
+}
+
+.detail-value a:hover {
+  color: var(--hero-red);
+}
+
+.detail-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 0;
+}
+
+/* ============================================================
+   6. ACCOUNT DETAILS
+   ============================================================ */
+.account-details-card {
+  gap: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.account-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 0;
+}
+
+.account-card-header::after {
+  content: '';
+  flex: 1;
+  min-width: 18px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--hero-red), rgba(255, 255, 255, 0.2), transparent);
+  box-shadow: 0 0 14px rgba(227, 24, 30, 0.5);
+  order: 2;
+}
+
+.account-card-header > div:first-child {
+  min-width: 0;
+  flex-shrink: 0;
+  order: 1;
+}
+
+.account-title {
+  margin-bottom: 1px;
+  padding-left: 0;
+}
+
+.account-title::after {
+  display: none;
+}
+
+.account-subtitle {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  line-height: 1.25;
+}
+
+.bank-logo-slot {
+  --bank-logo-width: clamp(245px, 32vw, 340px);
+  width: var(--bank-logo-width);
+  min-width: var(--bank-logo-width);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  order: 3;
+}
+
+.bank-logo {
+  display: block;
+  width: var(--bank-logo-width);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.account-rows {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+}
+
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 8px 9px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+}
+
+.account-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+
+.account-number-row {
+  background:
+    linear-gradient(140deg, rgba(227, 24, 30, 0.115), rgba(255, 255, 255, 0.028)),
+    rgba(255, 255, 255, 0.04);
+  border-color: rgba(227, 24, 30, 0.22);
+}
+
+.account-number {
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 0.035em;
+}
+
+.copy-all-btn {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid rgba(227, 24, 30, 0.35);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(227, 24, 30, 0.9), rgba(179, 16, 21, 0.92)),
+    var(--hero-red);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(227, 24, 30, 0.15);
+}
+
+.copy-all-btn:hover,
+.copy-all-btn:focus-visible {
+  background:
+    linear-gradient(135deg, rgba(255, 43, 50, 0.96), rgba(179, 16, 21, 0.94)),
+    var(--hero-red-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.copy-all-btn.copied {
+  background:
+    linear-gradient(135deg, rgba(37, 211, 102, 0.92), rgba(11, 132, 65, 0.95)),
+    var(--whatsapp-green);
+  border-color: rgba(37, 211, 102, 0.38);
+}
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  transform: translate(-50%, 12px);
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(10, 12, 18, 0.92);
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  border-radius: var(--radius-pill);
+  color: #FFFFFF;
+  padding: 9px 16px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.36);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.copy-toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ============================================================
+   7. FOOTER
+   ============================================================ */
+.showroom-footer {
+  text-align: center;
+  padding: 12px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-hero-logo {
+  max-height: 22px;
+  width: auto;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+
+.footer-main-text {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.footer-sub-text {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.footer-powered {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.76;
+}
+
+/* ============================================================
+   7. RESPONSIVE REFINEMENTS (All Display Sizes)
+   ============================================================ */
+
+@media (max-width: 520px) {
+  .showroom-topbar {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dealer-tag-pill {
+    flex: 1 1 auto;
+    max-width: calc(100% - 130px);
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  .dealer-tag-pill span[data-i18n] {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .section-title {
+    font-size: 0.78rem;
+  }
+
+  .showroom-details-card {
+    gap: 14px;
+  }
+
+  .account-card-header {
+    gap: 8px;
+  }
+
+  .account-card-header::after {
+    min-width: 8px;
+  }
+
+  .bank-logo-slot {
+    --bank-logo-width: clamp(150px, 42vw, 188px);
+    width: var(--bank-logo-width);
+    min-width: var(--bank-logo-width);
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .vip-actions-grid,
+  .social-hub-grid {
+    gap: 9px;
+  }
+
+  .action-tile {
+    padding: 12px 10px;
+    min-height: 104px;
+    border-radius: 18px;
+  }
+
+  .tile-icon-wrap {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tile-title {
+    font-size: 0.95rem;
+  }
+
+  .tile-sub,
+  .social-handle {
+    font-size: 0.68rem;
+  }
+
+  .social-card {
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .social-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+
+  .social-name {
+    font-size: 0.82rem;
+  }
+}
+@media (max-width: 375px) {
+  .showroom-container {
+    padding-left: 14px;
+    padding-right: 14px;
+    gap: 14px;
+  }
+
+  .dealer-tag-pill {
+    gap: 6px;
+    padding: 5px 8px 5px 5px;
+    font-size: 0.62rem;
+  }
+
+  .dealer-hero-logo-slot {
+    width: 38px;
+    height: 20px;
+    padding: 3px 5px;
+  }
+
+  .business-title {
+    font-size: 1.18rem;
+  }
+
+  .showroom-hero-card {
+    min-height: 142px;
+    max-height: 154px;
+    padding: 11px 12px 10px;
+    background-position: center 38%;
+  }
+
+  .logo-slot {
+    width: 42px;
+    height: auto;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .action-tile {
+    padding: 12px 10px;
+    min-height: 100px;
+  }
+
+  .tile-icon-wrap {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tile-title {
+    font-size: 0.94rem;
+  }
+
+  .tile-sub {
+    font-size: 0.68rem;
+  }
+
+  .social-card {
+    padding: 10px;
+    gap: 9px;
+  }
+
+  .detail-row {
+    gap: 10px;
+  }
+
+  .detail-value {
+    font-size: 0.76rem;
+  }
+
+  .copy-btn {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .account-row {
+    padding: 7px 8px;
+    gap: 8px;
+  }
+
+  .account-number {
+    font-size: 0.94rem;
+    letter-spacing: 0.025em;
+  }
+
+  .copy-all-btn {
+    min-height: 38px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .vip-actions-grid,
+  .social-hub-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dealer-tag-pill {
+    max-width: calc(100% - 130px);
+  }
+
+  .lang-btn {
+    padding: 5px 7px;
+  }
+
+  .showroom-hero-card {
+    min-height: 138px;
+  }
+}
+
+@media (min-width: 768px) {
+  .showroom-topbar {
+    padding-inline: 0;
+  }
+
+  .showroom-hero-card {
+    min-height: 188px;
+    max-height: 208px;
+    padding: 18px 22px;
+    background-position: center 40%;
+  }
+
+  .brand-logos-row {
+    margin-bottom: 7px;
+    min-height: 44px;
+  }
+
+  .logo-slot {
+    width: 58px;
+    height: auto;
+  }
+
+  .business-title {
+    font-size: 1.56rem;
+  }
+
+  .business-badge-sub {
+    font-size: 0.7rem;
+    max-width: 300px;
+  }
+
+  .location-sub {
+    font-size: 0.68rem;
+  }
+
+  .quick-actions-section,
+  .social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .vip-actions-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .action-tile {
+    min-height: 112px;
+    padding: 15px 13px;
+  }
+
+  .tile-title {
+    font-size: 1rem;
+  }
+
+  .tile-sub {
+    font-size: 0.74rem;
+  }
+
+  .social-hub-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .social-card {
+    min-height: 68px;
+    padding: 13px;
+  }
+
+  .showroom-details-card,
+  .account-details-card {
+    padding: 20px 18px 18px;
+  }
+
+  .account-details-card {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .account-rows {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .vip-actions-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .action-tile {
+    min-height: 114px;
+    padding: 16px 14px;
+  }
+
+  .social-hub-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .social-card {
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 11px;
+    min-height: 70px;
+  }
+
+  .social-handle {
+    white-space: nowrap;
+  }
+
+  .account-rows {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .action-tile {
+    min-height: 118px;
+  }
+}
+
+

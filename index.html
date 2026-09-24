@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
+  <meta name="theme-color" content="#07080B">
+  <meta name="description" content="Rodrigo Enterprises - Authorized Hero Motorcycle Dealer in Kaduwela, Sri Lanka. Contact us on WhatsApp, call, get showroom directions, or leave a review.">
+  
+  <title>Rodrigo Enterprises | Authorized Hero Dealer - Kaduwela</title>
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, Noto Sans Sinhala, Noto Sans Tamil -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+
+  <!-- Ambient Automotive Red Lighting Layer -->
+  <div class="ambient-glow-top" aria-hidden="true"></div>
+
+  <!-- Mobile-First Showroom Canvas -->
+  <main class="showroom-container">
+
+    <!-- 1. Top Bar: Dealership Pill & Language Switcher -->
+    <header class="showroom-topbar">
+      <div class="dealer-tag-pill" id="dealer-tag-pill">
+        <span class="dealer-hero-logo-slot" id="slot-hero-badge">
+          <img
+            id="logo-hero-badge"
+            src="assets/images/hero-logo.png"
+            alt="Hero MotoCorp Logo"
+            class="dealer-hero-logo"
+            onerror="this.style.display='none'; this.closest('.dealer-hero-logo-slot').style.display='none';"
+          >
+        </span>
+        <span data-i18n="dealership_badge">Authorized Hero Dealer</span>
+      </div>
+
+      <!-- Language Switcher: English / Sinhala / Tamil -->
+      <div class="lang-switcher-wrap" role="group" aria-label="Language Selector">
+        <div class="lang-pill-indicator" aria-hidden="true"></div>
+        <button type="button" id="lang-btn-en" class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        <button type="button" id="lang-btn-si" class="lang-btn" data-lang="si" aria-label="Switch to Sinhala">සිං</button>
+        <button type="button" id="lang-btn-ta" class="lang-btn" data-lang="ta" aria-label="Switch to Tamil">தமிழ்</button>
+      </div>
+    </header>
+
+    <!-- 2. Showroom Identity Card -->
+    <section class="showroom-hero-card" aria-labelledby="business-title">
+      <div class="brand-logos-row" id="brand-logos-row">
+        <!-- Rodrigo Enterprises Logo Slot -->
+        <div class="logo-slot" id="slot-rodrigo">
+          <img
+            id="logo-rodrigo"
+            src="assets/images/showroom-logo-transparent.png"
+            alt="Rodrigo Enterprises Logo"
+            class="brand-logo"
+            onerror="this.style.display='none'; this.closest('.logo-slot').style.display='none';"
+          >
+        </div>
+      </div>
+
+      <div class="hero-identity-text">
+        <h1 id="business-title" class="business-title" data-i18n="business_name">Rodrigo Enterprises</h1>
+        <div class="business-badge-sub" data-i18n="dealership_tagline">Authorized Hero Motorcycle Dealer in Kaduwela</div>
+        <div class="location-sub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span data-i18n="location_badge">Kaduwela, Sri Lanka</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Primary Showroom VIP Cockpit (2x2 Action Tiles) -->
+    <section class="quick-actions-section" aria-label="Showroom Quick Actions">
+      <div class="section-title" data-i18n="vip_section_title">Quick Showroom Access</div>
+      <div class="vip-actions-grid">
+
+        <!-- WhatsApp Action Tile -->
+        <a id="btn-whatsapp" class="action-tile tile-whatsapp" href="#" aria-label="Chat on WhatsApp">
+          <div class="tile-top-row">
+            <div class="tile-icon-wrap" aria-hidden="true">
+              <svg class="whatsapp-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.04C9.36 7.04 9.09 7.11 8.87 7.35C8.65 7.59 8.02 8.18 8.02 9.38C8.02 10.59 8.9 11.75 9.02 11.92C9.15 12.09 10.74 14.54 13.18 15.59C13.76 15.84 14.21 16 14.57 16.11C15.15 16.3 15.68 16.27 16.1 16.21C16.57 16.14 17.55 15.62 17.76 15.03C17.96 14.45 17.96 13.94 17.9 13.84C17.84 13.74 17.68 13.68 17.44 13.56C17.2 13.44 16.02 12.86 15.8 12.78C15.58 12.7 15.42 12.66 15.26 12.9C15.1 13.14 14.64 13.68 14.5 13.84C14.36 14 14.22 14.02 13.98 13.9C13.74 13.78 12.97 13.53 12.05 12.71C11.34 12.08 10.86 11.3 10.72 11.06C10.58 10.82 10.7 10.69 10.82 10.57C10.93 10.46 11.07 10.28 11.19 10.14C11.31 10 11.35 9.9 11.43 9.74C11.5 9.58 11.47 9.44 11.41 9.32C11.35 9.2 10.89 8.07 10.7 7.61C10.51 7.15 10.32 7.21 10.18 7.21C10.04 7.21 9.87 7.2 9.71 7.2C9.55 7.2 9.53 7.04 9.53 7.04Z"/>
+              </svg>
+            </div>
+            <span class="tile-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-title" data-i18n="action_whatsapp">WhatsApp</div>
+            <div class="tile-sub" data-i18n="action_whatsapp_sub">Chat with our team</div>
+          </div>
+        </a>
+
+        <!-- Call Now Action Tile -->
+        <a id="btn-call" class="action-tile tile-call" href="#" aria-label="Call Dealership Now">
+          <div class="tile-top-row">
+            <div class="tile-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <span class="tile-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-title" data-i18n="action_call">Call Now</div>
+            <div class="tile-sub" data-i18n="action_call_sub">Direct showroom line</div>
+          </div>
+        </a>
+
+        <!-- Directions Action Tile -->
+        <a id="btn-directions" class="action-tile tile-directions" href="#" aria-label="Get Directions to Showroom">
+          <div class="tile-top-row">
+            <div class="tile-icon-wrap" aria-hidden="true">
+              <img src="assets/icons/google_maps_logo.png" alt="" class="channel-logo">
+            </div>
+            <span class="tile-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-title" data-i18n="action_directions">Directions</div>
+            <div class="tile-sub" data-i18n="action_directions_sub">Google Maps navigation</div>
+          </div>
+        </a>
+
+        <!-- Google Review Action Tile -->
+        <a id="btn-review" class="action-tile tile-review" href="#" aria-label="Leave a Google Review">
+          <div class="tile-top-row">
+            <div class="tile-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+              </svg>
+            </div>
+            <span class="tile-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </span>
+          </div>
+          <div class="tile-body">
+            <div class="tile-title" data-i18n="action_review">Google Review</div>
+            <div class="mini-stars" aria-label="5 stars">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/></svg>
+            </div>
+            <div class="tile-sub" data-i18n="action_review_sub" style="margin-top: 2px;">Rate your visit</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 4. Connect & Follow Hub (Social Channels) -->
+    <section class="social-section" aria-label="Social Channels">
+      <div class="section-title" data-i18n="social_section_title">Connect & Follow</div>
+      <div class="social-hub-grid">
+
+        <!-- Facebook -->
+        <a id="btn-facebook" class="social-card" href="#" aria-label="Facebook Page">
+          <div class="social-icon-box" aria-hidden="true">
+            <img src="assets/icons/facebook-logo.png" alt="" class="channel-logo">
+          </div>
+          <div class="social-text">
+            <span class="social-name" data-i18n="social_facebook">Facebook</span>
+            <span class="social-handle" data-i18n="social_facebook_sub">Rodrigo Enterprises</span>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a id="btn-instagram" class="social-card" href="#" aria-label="Instagram Profile">
+          <div class="social-icon-box" aria-hidden="true">
+            <img src="assets/icons/instagram-logo.png" alt="" class="channel-logo">
+          </div>
+          <div class="social-text">
+            <span class="social-name" data-i18n="social_instagram">Instagram</span>
+            <span class="social-handle" data-i18n="social_instagram_sub">@rodrigoenterprises</span>
+          </div>
+        </a>
+
+        <!-- TikTok -->
+        <a id="btn-tiktok" class="social-card" href="#" aria-label="TikTok Profile">
+          <div class="social-icon-box" aria-hidden="true">
+            <img src="assets/icons/tiktok-logo.png" alt="" class="channel-logo">
+          </div>
+          <div class="social-text">
+            <span class="social-name" data-i18n="social_tiktok">TikTok</span>
+            <span class="social-handle" data-i18n="social_tiktok_sub">@rodrigo.enterpris</span>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a id="btn-email" class="social-card" href="#" aria-label="Send Email">
+          <div class="social-icon-box" aria-hidden="true">
+            <img src="assets/icons/Mail-logo.png" alt="" class="channel-logo">
+          </div>
+          <div class="social-text">
+            <span class="social-name" data-i18n="social_email">Email Us</span>
+            <span class="social-handle" data-i18n="social_email_sub">Direct inquiries</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 5. Showroom Details Card -->
+    <section class="showroom-details-card" aria-label="Dealership Contact Details">
+      <div class="section-title" data-i18n="details_section_title">Showroom Details</div>
+
+      <!-- Address -->
+      <div class="detail-row">
+        <div class="detail-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label" data-i18n="detail_address_label">Address</span>
+          <span class="detail-value" data-i18n="detail_address_val">137/B, Awissawella Road, Hewagama, Kaduwela</span>
+        </div>
+        <button type="button" class="copy-btn" data-copy="137/B, Awissawella Road, Hewagama, Kaduwela" aria-label="Copy Address" title="Copy">
+          <span class="copy-icon-default" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </span>
+          <span class="copy-icon-done" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="detail-divider" aria-hidden="true"></div>
+
+      <!-- Phone -->
+      <div class="detail-row">
+        <div class="detail-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label" data-i18n="detail_phone_label">Phone</span>
+          <span class="detail-value"><a href="tel:+94762768888">076 276 88 88</a></span>
+        </div>
+        <button type="button" class="copy-btn" data-copy="076 276 88 88" aria-label="Copy Phone" title="Copy">
+          <span class="copy-icon-default" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </span>
+          <span class="copy-icon-done" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="detail-divider" aria-hidden="true"></div>
+
+      <!-- WhatsApp -->
+      <div class="detail-row">
+        <div class="detail-icon-wrap" style="color: var(--whatsapp-green);" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.04C9.36 7.04 9.09 7.11 8.87 7.35C8.65 7.59 8.02 8.18 8.02 9.38C8.02 10.59 8.9 11.75 9.02 11.92C9.15 12.09 10.74 14.54 13.18 15.59C13.76 15.84 14.21 16 14.57 16.11C15.15 16.3 15.68 16.27 16.1 16.21C16.57 16.14 17.55 15.62 17.76 15.03C17.96 14.45 17.96 13.94 17.9 13.84C17.84 13.74 17.68 13.68 17.44 13.56C17.2 13.44 16.02 12.86 15.8 12.78C15.58 12.7 15.42 12.66 15.26 12.9C15.1 13.14 14.64 13.68 14.5 13.84C14.36 14 14.22 14.02 13.98 13.9C13.74 13.78 12.97 13.53 12.05 12.71C11.34 12.08 10.86 11.3 10.72 11.06C10.58 10.82 10.7 10.69 10.82 10.57C10.93 10.46 11.07 10.28 11.19 10.14C11.31 10 11.35 9.9 11.43 9.74C11.5 9.58 11.47 9.44 11.41 9.32C11.35 9.2 10.89 8.07 10.7 7.61C10.51 7.15 10.32 7.21 10.18 7.21C10.04 7.21 9.87 7.2 9.71 7.2C9.55 7.2 9.53 7.04 9.53 7.04Z"/>
+          </svg>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label" data-i18n="detail_whatsapp_label">WhatsApp</span>
+          <span class="detail-value"><a href="https://wa.me/94762768888" target="_blank" rel="noopener noreferrer">076 276 88 88</a></span>
+        </div>
+        <button type="button" class="copy-btn" data-copy="076 276 88 88" aria-label="Copy WhatsApp" title="Copy">
+          <span class="copy-icon-default" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </span>
+          <span class="copy-icon-done" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="detail-divider" aria-hidden="true"></div>
+
+      <!-- Email -->
+      <div class="detail-row">
+        <div class="detail-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </div>
+        <div class="detail-content">
+          <span class="detail-label" data-i18n="detail_email_label">Email</span>
+          <span class="detail-value"><a href="mailto:rodrigoenterpises00@gmail.com">rodrigoenterpises00@gmail.com</a></span>
+        </div>
+        <button type="button" class="copy-btn" data-copy="rodrigoenterpises00@gmail.com" aria-label="Copy Email" title="Copy">
+          <span class="copy-icon-default" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </span>
+          <span class="copy-icon-done" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- 6. Account Details Card -->
+    <section class="account-details-card" aria-label="Bank Account Details">
+      <div class="account-card-header">
+        <div>
+          <div class="section-title account-title" data-i18n="account_section_title">Account Details</div>
+          <p class="account-subtitle" data-i18n="account_section_sub">Bank transfer information</p>
+        </div>
+        <div class="bank-logo-slot">
+          <img src="assets/icons/pan-asia-logo-cropped.png" alt="Pan Asia Bank Logo" class="bank-logo">
+        </div>
+      </div>
+
+      <div class="account-rows">
+        <div class="account-row">
+          <div class="account-content">
+            <span class="detail-label" data-i18n="account_name_label">Account Name</span>
+            <span class="detail-value">A K S RODRIGO</span>
+          </div>
+          <button type="button" class="copy-btn" data-copy="A K S RODRIGO" aria-label="Copy Account Name" title="Copy">
+            <span class="copy-icon-default" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </span>
+            <span class="copy-icon-done" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="account-row account-number-row">
+          <div class="account-content">
+            <span class="detail-label" data-i18n="account_number_label">Account Number</span>
+            <span class="detail-value account-number">108110002669</span>
+          </div>
+          <button type="button" class="copy-btn" data-copy="108110002669" aria-label="Copy Account Number" title="Copy">
+            <span class="copy-icon-default" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </span>
+            <span class="copy-icon-done" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="account-row">
+          <div class="account-content">
+            <span class="detail-label" data-i18n="bank_name_label">Bank Name</span>
+            <span class="detail-value">PAN ASIA BANK</span>
+          </div>
+          <button type="button" class="copy-btn" data-copy="PAN ASIA BANK" aria-label="Copy Bank Name" title="Copy">
+            <span class="copy-icon-default" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </span>
+            <span class="copy-icon-done" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="account-row">
+          <div class="account-content">
+            <span class="detail-label" data-i18n="branch_name_label">Branch Name</span>
+            <span class="detail-value">Kaduwela</span>
+          </div>
+          <button type="button" class="copy-btn" data-copy="Kaduwela" aria-label="Copy Branch Name" title="Copy">
+            <span class="copy-icon-default" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="13" height="13" x="9" y="9" rx="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </span>
+            <span class="copy-icon-done" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="copy-all-btn"
+        data-copy="Account Name: A K S RODRIGO&#10;Account Number: 108110002669&#10;Bank Name: PAN ASIA BANK&#10;Branch Name: Kaduwela"
+      >
+        <span data-i18n="copy_all_account">Copy All Account Details</span>
+      </button>
+    </section>
+
+    <div class="copy-toast" role="status" aria-live="polite" data-i18n="copy_toast">Copied</div>
+
+    <!-- 7. Showroom Footer -->
+    <footer class="showroom-footer">
+      <div class="footer-main-text" data-i18n="footer_text">Rodrigo Enterprises • Authorized Hero Dealer</div>
+      <div class="footer-sub-text">
+        <span data-i18n="footer_location">Kaduwela, Sri Lanka</span> • <span data-i18n="footer_rights">All Rights Reserved</span>
+      </div>
+      <div class="footer-powered" data-i18n="footer_powered">Powered by S_NIM</div>
+    </footer>
+
+  </main>
+
+  <!-- Showroom Application Engine -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
+
+
