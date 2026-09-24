@@ -12,6 +12,7 @@ class DigitalShowroom {
 
   init() {
     this.setupLogos();
+    this.setupHeroSlider();
     this.setupLanguageSwitcher();
     this.applyTranslations(this.currentLang);
     this.setupLinks();
@@ -47,6 +48,40 @@ class DigitalShowroom {
 
     updateRodrigoLogo();
     setTimeout(updateRodrigoLogo, 150);
+  }
+
+
+  setupHeroSlider() {
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    if (slides.length <= 1) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const waitForImage = (slide) => new Promise((resolve) => {
+      if (slide.complete && slide.naturalWidth > 0) {
+        resolve(slide);
+        return;
+      }
+
+      slide.addEventListener('load', () => resolve(slide), { once: true });
+      slide.addEventListener('error', () => resolve(null), { once: true });
+    });
+
+    Promise.all(slides.map(waitForImage)).then((loadedSlides) => {
+      const usableSlides = loadedSlides.filter(Boolean);
+      if (usableSlides.length <= 1) return;
+
+      slides.forEach((slide) => slide.classList.remove('active'));
+      let activeIndex = 0;
+      usableSlides[activeIndex].classList.add('active');
+
+      window.setInterval(() => {
+        usableSlides[activeIndex].classList.remove('active');
+        activeIndex = (activeIndex + 1) % usableSlides.length;
+        usableSlides[activeIndex].classList.add('active');
+      }, 3800);
+    });
   }
 
   setupLanguageSwitcher() {
