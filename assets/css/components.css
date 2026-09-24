@@ -1418,3 +1418,53 @@ body {
     background: #D9D2C7 !important;
   }
 }
+
+/* Final hero composition: taller slider, logo top, text lower */
+.showroom-hero-card {
+  min-height: clamp(218px, 54vw, 270px) !important;
+  max-height: 286px !important;
+  padding: 14px 16px 18px !important;
+  justify-content: flex-start !important;
+}
+
+.brand-logos-row {
+  margin-bottom: auto !important;
+  min-height: 54px !important;
+  align-items: flex-start !important;
+}
+
+.logo-slot {
+  width: clamp(58px, 15vw, 76px) !important;
+}
+
+.hero-identity-text {
+  margin-top: auto !important;
+  margin-bottom: 4px !important;
+}
+
+@media (max-width: 520px) {
+  .showroom-hero-card {
+    min-height: clamp(220px, 56vw, 250px) !important;
+    max-height: 260px !important;
+    padding: 13px 14px 16px !important;
+  }
+
+  .brand-logos-row {
+    min-height: 50px !important;
+  }
+
+  .logo-slot {
+    width: 58px !important;
+  }
+
+  .hero-identity-text {
+    margin-bottom: 3px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .showroom-hero-card {
+    min-height: 206px !important;
+    max-height: 236px !important;
+  }
+}
